@@ -5,6 +5,8 @@ function PizzaPie (size, toppings){
   this.price = 0
 };
 
+// WORKING!✅
+// THIS PROTOTYPE WILL SET THE PIZZA PRICE IN REGARDS TO THE TOTAL TOPPINGS
 PizzaPie.prototype.getPrice = function (){
   if (totalToppings >= 1 && totalToppings <3){
     this.price += 5;
@@ -17,49 +19,46 @@ PizzaPie.prototype.getPrice = function (){
     this.price += 12;
   };
   return this.price;
-
-  };
-
-
-
-
-
+};
 
 
 // FRONT END LOGIC
-
-
 
 // INPUT RECEIVING VARIABLE
 var sizeInput = $("#sizeSelections:checked");
 // UNDEFINED ARRAYS TO CATCH VALUES OF EACH TOPPING SELECTION
 var myToppings = [];
 var totalToppings = 0;
-var toppingsList = [];
-console.log(toppingsList);
 
+// WORKING!✅
 // THIS LOOP IS GRABING THE VALUE FOR EACH CHECKED BOX
 function toppingCollector (mytopping) {
-$("input:checkbox[name=toppings]:checked").each(function() {
-  myToppings.push (parseInt($(this).val()));
-  toppingsList.push($(this).html());
-});
+  $("input:checkbox[name=toppings]:checked").each(function() {
+    myToppings.push (parseInt($(this).val()));
+  });
 };
 
+
+
+
+// WORKING!✅
+// THIS FUNCTION GETS THE TOTAL NUMBER OF TOPPINGS
 function toppingSum (myToppings) {
-for (var i=0; i<myToppings.length; i++){
-  totalToppings +=  parseInt(myToppings[i]);
-};
+  for (var i=0; i<myToppings.length; i++){
+    totalToppings +=  parseInt(myToppings[i]);
+  };
 };
 
+// THIS WILL CALL FUNTIONS ONCE FORM IS SUBMITTED!
 $(document).ready(function(){
-$("#orderMenu").submit(function(e){
-  event.preventDefault();
-  var newPizza = new PizzaPie ();
-  toppingCollector();
-  toppingSum(myToppings)
-  var price = newPizza.getPrice();
-  console.log(price);
-  console.log(newPizza);
+  $("#orderMenu").submit(function(e){
+    event.preventDefault();
+    var newPizza = new PizzaPie ();
+    toppingCollector();
+    toppingSum(myToppings)
+    var price = newPizza.getPrice();
+    $(".pizzaDetails").show(price);
+    console.log(price);
+    console.log(newPizza);
   });
-  });
+});
