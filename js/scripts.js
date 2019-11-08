@@ -8,9 +8,21 @@ function PizzaPie (size, toppings){
 
 
 
-
-
 // FRONT END LOGIC
 $(document).ready(function(){
+$("#orderMenu").submit(function(e){
+  event.preventDefault();
 
+
+  var sizeInput = $("#sizeSelections:checked");
+
+  var myToppings = [];
+
+
+  $("input:checkbox[name=toppings]:checked").each(function() {
+      var myToppings = $(this).val();
+       console.log(myToppings);
+  });
+
+  });
 });
