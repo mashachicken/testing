@@ -13,16 +13,14 @@ $(document).ready(function(){
 $("#orderMenu").submit(function(e){
   event.preventDefault();
 
-
   var sizeInput = $("#sizeSelections:checked");
-
   var myToppings = [];
 
-
   $("input:checkbox[name=toppings]:checked").each(function() {
-      var myToppings = $(this).val();
-       console.log(myToppings);
+      myToppings.push (parseInt($(this).val()));
   });
+
+  console.log(myToppings);
 
   });
 });
