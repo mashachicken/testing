@@ -49,6 +49,11 @@ function toppingSum (myToppings) {
   };
 };
 
+function showPizzaDetails (pizzaPie){
+  $(".results").show();
+  $(".pizza-price").html(this.price(0))
+};
+
 // THIS WILL CALL FUNTIONS ONCE FORM IS SUBMITTED!
 $(document).ready(function(){
   $("#orderMenu").submit(function(e){
@@ -57,8 +62,10 @@ $(document).ready(function(){
     toppingCollector();
     toppingSum(myToppings)
     var price = newPizza.getPrice();
-    $(".pizzaDetails").show(price);
-    console.log(price);
+    var priceTotal = this.price;
+    showPizzaDetails(newPizza);
+
+    console.log(pricel);
     console.log(newPizza);
   });
 });

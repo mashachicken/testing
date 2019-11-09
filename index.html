@@ -14,9 +14,9 @@
 
       <label for="sizeSelectionsMenu">Please choose a size:</label>
       <div class="form-group" id="sizeSelections">
-        <input type="checkbox" name="Size" value= 1 >Small<br>
-        <input type="checkbox" name="Size" value= 2 >Medium<br>
-        <input type="checkbox" name="Size" value= 3 >Large<br>
+        <input type="checkbox" name="Size" value= "Small" >Small<br>
+        <input type="checkbox" name="Size" value= "Medium" >Medium<br>
+        <input type="checkbox" name="Size" value= "Large" >Large<br>
       </div>
 
       <label for="toppingSelectionsMenu">Please pick your toppings:</label>
@@ -31,9 +31,13 @@
       </div>
       <button type="submit">Place your order!</button>
     </form>
-    <span id="pizzaDetails">
+    <div class="Results">
+
       <h2>Please see your order details below!</h2>
-    </span>
+      <p>Size: <span class="pizza-size"></span></p>
+      <p>Toppings: <span class="pizza-toppings"></span></p>
+      <p>Total Price: <span class="pizza-price"></span></p>
+    </div>
 
   </div>
 </body>
