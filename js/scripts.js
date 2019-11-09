@@ -10,7 +10,6 @@ function PizzaPie (size, toppings){
 PizzaPie.prototype.getPrice = function (){
   if (totalToppings >= 1 && totalToppings <3){
     this.price += 5;
-    console.log(totalToppings);
   }
   if (totalToppings >= 3 && totalToppings < 6){
     this.price += 10;
@@ -39,8 +38,6 @@ function toppingCollector (mytopping) {
 };
 
 
-
-
 // WORKING!✅
 // THIS FUNCTION GETS THE TOTAL NUMBER OF TOPPINGS
 function toppingSum (myToppings) {
@@ -50,9 +47,15 @@ function toppingSum (myToppings) {
 };
 
 function showPizzaDetails (pizzaPie){
+  console.log("hello")
+  priceTotal = this.price;
   $(".results").show();
-  $(".pizza-price").html(this.price(0))
+  $(".pizza-price").html(priceTotal)
+  $
+  ()
 };
+var sizeOpt = parseInt($("#size").val());
+console.log(sizeOpt);
 
 // THIS WILL CALL FUNTIONS ONCE FORM IS SUBMITTED!
 $(document).ready(function(){
@@ -61,11 +64,10 @@ $(document).ready(function(){
     var newPizza = new PizzaPie ();
     toppingCollector();
     toppingSum(myToppings)
-    var price = newPizza.getPrice();
-    var priceTotal = this.price;
+    newPizza.getPrice();
     showPizzaDetails(newPizza);
 
-    console.log(pricel);
+
     console.log(newPizza);
   });
 });
