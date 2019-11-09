@@ -4,9 +4,15 @@
 
 #### By George Acosta
 
-## Description
+## Specifications
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+1. This application will allow you choose between three sizes of pizza.
+2. This application will allow you to choose a selection of topics to include on pizza.
+3. This application will gather your choice of size and topping selections.
+4. this application will provide you a total price based on the selections.
+5. This app will show you a summary of pizza details once order is submitted.
+
+
 
 ## Setup/Installation Requirements
 
