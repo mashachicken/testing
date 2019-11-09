@@ -39,10 +39,6 @@ this.toppings = toppings;
 }
 // FRONT END LOGIC
 
-// INPUT RECEIVING VARIABLE
-var sizeInput = $("#sizeSelections:checked");
-// UNDEFINED ARRAYS TO CATCH VALUES OF EACH TOPPING SELECTION
-var totalToppings = 0;
 
 // WORKING!✅
 // THIS LOOP IS GRABING THE VALUE FOR EACH CHECKED BOX
@@ -51,24 +47,15 @@ function toppingCollector() {
   $("input:checkbox[name=toppings]:checked").each(function() {
     myToppings.push($(this).val());
   });
-  console.log(myToppings);
   return myToppings;
 };
 
 
-// WORKING!✅
-// THIS FUNCTION GETS THE TOTAL NUMBER OF TOPPINGS
-function toppingSum (myToppings) {
-  for (var i=0; i<myToppings.length; i++){
-    totalToppings +=  parseInt(myToppings[i]);
-  };
-};
-
 function showPizzaDetails (pizzaPie){
-  console.log("hello")
-  priceTotal = this.price;
+  $(".pizza-size").html(pizzaPie.size)
+  $(".pizza-toppings").html(pizzaPie.toppings.join(", "));
+  $(".pizza-price").html(pizzaPie.price);
   $(".results").show();
-  $(".pizza-price").html(priceTotal);
 };
 
 // THIS WILL CALL FUNTIONS ONCE FORM IS SUBMITTED!
@@ -83,12 +70,9 @@ $(document).ready(function(){
     var toppings = toppingCollector();
     newPizza.setToppings(toppings);
     newPizza.calculatePrice();
-    // toppingSum(myToppings)
-    // newPizza.getPrice();
-    // showPizzaDetails(newPizza);
-    //
-    //
-    // console.log(sizeOpt);
+
+    showPizzaDetails(newPizza);
+
     console.log(newPizza);
   });
 });
