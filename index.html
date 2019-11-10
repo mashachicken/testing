@@ -5,21 +5,29 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js" ></script>
-  <title>Georgios Pizza Pie Parlor</title>
+  <title>🍕Georgio's Pizza Pie Parlor🍕</title>
 </head>
 <body>
   <div class="container">
-    <h1>🍕🍕Welcome to Georgios Pizza Pie Parlor🍕🍕</h1>
-    <form id="orderMenu">
+    <!-- TOP OF DOC -->
+    <div class="card-header">
 
-      <label for="sizeSelectionsMenu">Please choose a size:</label>
+    <h1>🍕🍕Welcome to Georgio's Pizza Pie Parlor🍕🍕</h1>
+  </div>
+    <form id="orderMenu">
+<div class="card-body">
+
+<!-- SIZE SELECTION SECTION WITH DROPDOWN OPTIONS -->
+      <label for="sizeSelectionsMenu">Please select a size:</label>
       <select class="form-control" id="sizeSelections">
+        <option value=0 >--</option>
         <option value=1 >Small</option>
         <option value=2 >Medium</option>
         <option value=3 >Large</option>
       </select>
 
-      <label for="toppingSelectionsMenu">Please pick your toppings:</label>
+<!-- TOPPING SELECTION SECTION WITH CHECKBOX-MULTIPLE SELECTIONS -->
+      <label for="toppingSelectionsMenu">Please select your toppings:</label>
       <div class="form-group" id="toppingSelections">
         <input class="toppings" type="checkbox" name="toppings" value="Pepperoni" >Pepperoni<br>
         <input class="toppings" type="checkbox" name="toppings" value="BBQ Chicken" >BBQ Chicken<br>
@@ -29,14 +37,22 @@
         <input class="toppings" type="checkbox" name="toppings" value="Onion" >Onion<br>
         <input class="toppings" type="checkbox" name="toppings" value="Jalapenos" >Jalapenos<br>
       </div>
-      <button type="submit">Place your order!</button>
+      <!-- SUBMIT ORDER SECTION -->
+      <button class="btn btn-dark"type="submit">Place your order!</button>
     </form>
+  </div>
+    <!-- ORDER DETAIL SECTION/WILL REMAIN HIDDEN UNTIL ORDER IS SUBMITTED -->
     <div class="results">
 
+      <div class="card-header">
       <h2>Please see your order details below!</h2>
+    </div>
+    <div class="card-body">
+
       <p>Size: <span class="pizza-size"></span></p>
       <p>Toppings: <span class="pizza-toppings"></span></p>
-      <p>Total Price: <span class="pizza-price"></span></p>
+      <p>Total Price: $<span class="pizza-price"></span>.00</p>
+    </div>
     </div>
 
   </div>
